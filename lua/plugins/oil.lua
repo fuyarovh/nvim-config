@@ -37,6 +37,9 @@ return {
 				end,
 			},
 		},
+		preview_win = {
+			preview_method = "load"
+		},
 		view_options = {
 			natural_order = true,
 			case_insensitive = true,

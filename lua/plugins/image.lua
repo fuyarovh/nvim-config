@@ -4,6 +4,6 @@ return {
 		'leafo/magick',
 	},
 	opts = {
-		backend = "ueberzug",
+		backend = "sixel",
 	}
 }
