@@ -1,4 +1,4 @@
-require("florian")
+require("config")
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
