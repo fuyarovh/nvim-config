@@ -1,9 +1,12 @@
 -- vim.pack.add {
 -- 	{src = 'https://github.com/neovim/nvim-lspconfig'},
 -- }
+vim.lsp.inlay_hint.enable(true)
 vim.lsp.enable('jdtls')
 vim.lsp.enable('intelephense')
 vim.lsp.enable('vue_ls')
+vim.lsp.enable('clangd')
+vim.lsp.enable('basedpyright')
 vim.lsp.config('lua_ls', {
 	on_init = function(client)
 		local path = client.workspace_folders[1].name
