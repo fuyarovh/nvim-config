@@ -6,7 +6,12 @@ vim.lsp.enable('jdtls')
 vim.lsp.enable('intelephense')
 vim.lsp.enable('vue_ls')
 vim.lsp.enable('clangd')
-vim.lsp.enable('basedpyright')
+vim.lsp.enable('pyrefly')
+vim.lsp.enable('qmlls')
+vim.lsp.enable('clangd')
+vim.lsp.enable('nushell')
+vim.lsp.enable('tombi')
+vim.lsp.enable('texlab')
 vim.lsp.config('lua_ls', {
 	on_init = function(client)
 		local path = client.workspace_folders[1].name
@@ -39,3 +44,156 @@ vim.lsp.config('lua_ls', {
 	}
 })
 vim.lsp.enable('lua_ls')
+vim.lsp.config("ltex_plus", {
+  filetypes = {
+    -- Prose / markup
+    "bib",
+    "context",
+    "gitcommit",
+    "html",
+    "markdown",
+    "org",
+    "pandoc",
+    "plaintex",
+    "quarto",
+    "mail",
+    "mdx",
+    "rmd",
+    "rnoweb",
+    "rst",
+    "tex",
+    "text",
+    "typst",
+    "xhtml",
+
+    -- Programming languages
+    "bash",
+    "c",
+    "cpp",
+    "cs",
+    "clojure",
+    "coffee",
+    "dart",
+    "elixir",
+    "elm",
+    "elixir",
+    "erlang",
+    "fsharp",
+    "fortran",
+    "go",
+    "groovy",
+    "haskell",
+    "java",
+    "javascript",
+    "javascriptreact",
+    "julia",
+    "kotlin",
+    "lisp",
+    "lua",
+    "matlab",
+    "perl",
+    "perl6",
+    "php",
+    "powershell",
+    "puppet",
+    "python",
+    "r",
+    "ruby",
+    "rust",
+    "scala",
+    "sql",
+    "swift",
+    "typescript",
+    "typescriptreact",
+    "verilog",
+    "vb",
+  },
+
+  settings = {
+    ltex = {
+      language = "en-US",
+
+      enabled = {
+        -- Prose / markup
+        "bib",
+        "context",
+        "gitcommit",
+        "html",
+        "markdown",
+        "org",
+        "pandoc",
+        "plaintex",
+        "quarto",
+        "mail",
+        "mdx",
+        "rmd",
+        "rnoweb",
+        "rst",
+        "tex",
+        "latex",
+        "text",
+        "typst",
+        "xhtml",
+
+        -- Programming languages
+        "shellscript",
+        "c",
+        "csharp",
+        "cpp",
+        "clojure",
+        "coffeescript",
+        "dart",
+        "elixir",
+        "elm",
+        "elisp",
+        "emacs-lisp",
+        "erlang",
+        "fsharp",
+        "fortran-modern",
+        "go",
+        "groovy",
+        "haskell",
+        "java",
+        "javascript",
+        "javascriptreact",
+        "julia",
+        "kotlin",
+        "lisp",
+        "lua",
+        "matlab",
+        "perl",
+        "perl6",
+        "php",
+        "powershell",
+        "puppet",
+        "python",
+        "r",
+        "ruby",
+        "rust",
+        "scala",
+        "sql",
+        "swift",
+        "typescript",
+        "typescriptreact",
+        "verilog",
+        "vb",
+      },
+    },
+  },
+})
+
+vim.lsp.enable("ltex_plus")
+vim.filetype.add({
+  pattern = {
+    [".*"] = {
+      function(path)
+        local name = vim.fs.basename(path)
+
+        if not name:find(".", 1, true) then
+          return "text"
+        end
+      end,
+      { priority = -math.huge },
+    },
+  },
+})
